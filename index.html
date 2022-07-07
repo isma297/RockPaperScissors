@@ -12,7 +12,7 @@
         let cpuHand;
         function computerPlay() {
             computerHand=Math.floor(Math.random()*100);
-            console.log(cpuHand);
+            //console.log(cpuHand);
             if(computerHand<33){
                     computerHand="rock";
                   //  console.log(cpuHand);
@@ -45,24 +45,36 @@
 
         //Play the Game!
         let winner;
+        let scorePlayer=0;
+        let scoreComputer=0;
         function play(){
-            computerPlay();
-            playerPlay();
-            console.log(computerHand);
-            console.log(playerHand);
-            if(computerHand===playerHand){
+            for(let i=0; i<5; i++){
+                computerPlay();
+                playerPlay();
+                console.log(computerHand);
+                console.log(playerHand);
+
+                if(computerHand===playerHand){
                 console.log("You chose "+ playerHand+ " and the computer chose "+ computerHand +" It is a Tie!" );
-            }
-            else if (computerHand=="rock"&&playerHand=="scissors"||
+                }
+                else if (computerHand=="rock"&&playerHand=="scissors"||
                     computerHand=="paper"&&playerHand=="rock"||
                     computerHand=="scissors"&&playerHand=="paper"){
-                        console.log("You chose "+ playerHand+ " and the computer chose "+ computerHand +" The computer wins!");
+                        scoreComputer++;
+                        console.log("You chose "+ playerHand+ " and the computer chose "+ computerHand +" The computer obtained 1 point!");
                     }
-                    else{console.log("You chose "+ playerHand+ " and the computer chose "+ computerHand +" You win!")};
+                else{ scorePlayer++;
+                    console.log("You chose "+ playerHand+ " and the computer chose "+ computerHand +" You obtained 1 point!")};
+            
             }
-        
-play();
+            scoreComputer == scorePlayer ? winner="tie" :(scoreComputer > scorePlayer ? winner="The computer won": winner="the player won");
+            console.log(winner.toUpperCase());
+            return winner;
+        }
 
+        
+
+play();
     </script>
     
 </body>
