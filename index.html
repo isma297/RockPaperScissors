@@ -67,6 +67,7 @@
                     console.log("You chose "+ playerHand+ " and the computer chose "+ computerHand +" You obtained 1 point!")};
             
             }
+            console.log("Player score: "+scorePlayer+" ----- Computer score: "+scoreComputer);
             scoreComputer == scorePlayer ? winner="tie" :(scoreComputer > scorePlayer ? winner="The computer won": winner="the player won");
             console.log(winner.toUpperCase());
             return winner;
