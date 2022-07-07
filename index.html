@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+    <script>
+        // Computer play
+        let cpuHand;
+        function computerPlay() {
+            cpuHand=Math.floor(Math.random()*100);
+            console.log(cpuHand);
+            if(cpuHand<33){
+                    cpuHand="rock";
+                  //  console.log(cpuHand);
+                }
+                else if(cpuHand <66){
+                    cpuHand="paper";
+                //    console.log(cpuHand);
+                }
+                else {
+                    cpuHand="scissors";
+                    //console.log(cpuHand);
+                }   
+                return cpuHand;     
+            }
+            
+        //Player Play
+        let playerHand;
+        function playerPlay(){
+            playerHand=(prompt("Input your move",""))
+            //console.log(playerHand);
+            playerHand=playerHand.toLowerCase();
+            //console.log(playerHand);
+         if (playerHand!=="rock"&&playerHand!=="paper" && playerHand!=="scissors"){
+            console.log("Only availables moves are: rock, paper o scissor");
+            alert("Only availables moves are: rock, paper o scissor");
+            playerPlay();
+         }
+         return playerHand;   
+        }
+
+
+
+
+    </script>
+    
+</body>
+</html>
