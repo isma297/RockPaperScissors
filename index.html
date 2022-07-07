@@ -11,21 +11,21 @@
         // Computer play
         let cpuHand;
         function computerPlay() {
-            cpuHand=Math.floor(Math.random()*100);
+            computerHand=Math.floor(Math.random()*100);
             console.log(cpuHand);
-            if(cpuHand<33){
-                    cpuHand="rock";
+            if(computerHand<33){
+                    computerHand="rock";
                   //  console.log(cpuHand);
                 }
-                else if(cpuHand <66){
-                    cpuHand="paper";
+                else if(computerHand <66){
+                    computerHand="paper";
                 //    console.log(cpuHand);
                 }
                 else {
-                    cpuHand="scissors";
+                    computerHand="scissors";
                     //console.log(cpuHand);
                 }   
-                return cpuHand;     
+                return computerHand;     
             }
             
         //Player Play
@@ -43,8 +43,25 @@
          return playerHand;   
         }
 
-
-
+        //Play the Game!
+        let winner;
+        function play(){
+            computerPlay();
+            playerPlay();
+            console.log(computerHand);
+            console.log(playerHand);
+            if(computerHand===playerHand){
+                console.log("You chose "+ playerHand+ " and the computer chose "+ computerHand +" It is a Tie!" );
+            }
+            else if (computerHand=="rock"&&playerHand=="scissors"||
+                    computerHand=="paper"&&playerHand=="rock"||
+                    computerHand=="scissors"&&playerHand=="paper"){
+                        console.log("You chose "+ playerHand+ " and the computer chose "+ computerHand +" The computer wins!");
+                    }
+                    else{console.log("You chose "+ playerHand+ " and the computer chose "+ computerHand +" You win!")};
+            }
+        
+play();
 
     </script>
     
