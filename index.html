@@ -55,19 +55,23 @@
                 console.log(playerHand);
 
                 if(computerHand===playerHand){
-                console.log("You chose "+ playerHand+ " and the computer chose "+ computerHand +" It is a Tie!" );
+                console.log("You chose "+ playerHand+ " and the computer chose "+
+                computerHand +" It is a Tie!" );
                 }
                 else if (computerHand=="rock"&&playerHand=="scissors"||
                     computerHand=="paper"&&playerHand=="rock"||
                     computerHand=="scissors"&&playerHand=="paper"){
                         scoreComputer++;
-                        console.log("You chose "+ playerHand+ " and the computer chose "+ computerHand +" The computer obtained 1 point!");
+                        console.log("You chose "+ playerHand+ " and the computer chose "
+                        + computerHand +" The computer obtained 1 point!");
                     }
                 else{ scorePlayer++;
-                    console.log("You chose "+ playerHand+ " and the computer chose "+ computerHand +" You obtained 1 point!")};
+                    console.log("You chose "+ playerHand+ " and the computer chose "+
+                     computerHand +" You obtained 1 point!")};
             
             }
-            console.log("Player score: "+scorePlayer+" ----- Computer score: "+scoreComputer);
+            console.log("Player score: "+scorePlayer+" ----- Computer score: "
+            +scoreComputer);
             scoreComputer == scorePlayer ? winner="tie" :(scoreComputer > scorePlayer ? winner="The computer won": winner="the player won");
             console.log(winner.toUpperCase());
             return winner;
