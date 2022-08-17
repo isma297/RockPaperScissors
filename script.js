@@ -1,67 +1,52 @@
 // Computer play
-let cpuHand;
+let cpu;
 function computerPlay() {
-    cpuHand=Math.floor(Math.random()*100);
-    //console.log(cpuHand);
-    if(cpuHand<33){
-        cpuHand="rock";
-                  //  console.log(cpuHand);
+    cpu=Math.floor(Math.random()*100);
+    if(cpu<33){
+        cpu="rock";
+         }
+    else if(cpu <66){cpu="paper";
         }
-    else if(cpuHand <66){cpuHand="paper";
-                //    console.log(cpuHand);
-        }
-    else {cpuHand="scissors";
-            //console.log(cpuHand);
+    else {cpu="scissors";
           }   
-            return cpuHand;     
+            return cpu;     
             }
-            
 //Player Play
-let playerHand;
+let player;
 function playerPlay(){
-    playerHand=(prompt("Input your move",""))
-    //console.log(playerHand);
-    playerHand=playerHand.toLowerCase();
-    //console.log(playerHand);
-    if (playerHand!=="rock"&&playerHand!=="paper" && playerHand!=="scissors"){
-    onsole.log("Only availables moves are: rock, paper o scissor");
+    player=(prompt("Input your move",""))
+    player=player.toLowerCase();
+    if (player!=="rock"&&player!=="paper" && player!=="scissors"){
+    //console.log("Only availables moves are: rock, paper o scissor");
     alert("Only availables moves are: rock, paper o scissor");
     playerPlay();
     }
-    return playerHand;   
+    return player;   
     }
-
-        //Play the Game!
+//Play the Game!
 let winner;
 let scorePlayer=0;
 let scoreComputer=0;
 function play(){
-    for(let i=0; i<5; i++){
+   // for(let i=0; i<5; i++){
         computerPlay();
         playerPlay();
-        console.log(cpuHand);
-        console.log(playerHand);
+        // console.log(cpu);
+        // console.log(player);
 
-        if(cpuHand===playerHand){
-        console.log("You chose "+ playerHand+ " and the computer chose "+
-        cpuHand +" It is a Tie!" );
+        if(cpu===player){
+        // console.log("You chose "+ player+ " and the computer chose "+ cpu +" It is a Tie!" );
         }
-        else if (cpuHand=="rock"&&playerHand=="scissors"||
-        cpuHand=="paper"&&playerHand=="rock"||
-        cpuHand=="scissors"&&playerHand=="paper"){
+        else if (cpu=="rock"&&player=="scissors" ||  cpu=="paper"&&player=="rock"|| cpu=="scissors"&&player=="paper"){
         scoreComputer++;
-        console.log("You chose "+ playerHand+ " and the computer chose "
-        + cpuHand +" The computer obtained 1 point!");
+        // console.log("You chose "+ player+ " and the computer chose " + cpu +" The computer obtained 1 point!");
         }
-                else{ scorePlayer++;
-                    console.log("You chose "+ playerHand+ " and the computer chose "+
-                     cpuHand +" You obtained 1 point!")};
-            
+        else{ scorePlayer++;
+            //  console.log("You chose "+ player+ " and the computer chose "+ cpu +" You obtained 1 point!")};
             }
-            console.log("Player score: "+scorePlayer+" ----- Computer score: "
-            +scoreComputer);
+            // console.log("Player score: "+scorePlayer+" ----- Computer score: " +scoreComputer);
             scoreComputer == scorePlayer ? winner="tie" :(scoreComputer > scorePlayer ? winner="The computer won": winner="the player won");
-            console.log(winner.toUpperCase());
+            // console.log(winner.toUpperCase());
             return winner;
         }
 
