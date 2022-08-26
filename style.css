@@ -1,0 +1,43 @@
+body{display: flex;
+    flex-direction: column;
+background-color: #f5f4f0;
+font-family: sans-serif;
+text-align: center;
+
+}
+
+.box-1 , .box-2 ,.box-3 , .box-4{
+border-style: solid;
+align-items: center;
+display: flex;
+/* padding: auto; */
+}
+
+.box-1{flex: 1;
+flex-direction: column;
+justify-content: center;
+/* gap: 10%; */
+justify-content: space-around;
+}
+.box-2{flex: 3;}
+.box-3{flex: 0.5;color: white;background-color: black;justify-content: center;}
+.box-4{flex: 3;}
+.container1{
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    flex-basis: 20%;
+    justify-self: center;
+}
+img{
+    width: 100%;
+}
+
+#container{text-align: center;
+}
+
+#rock{background-image: url("img/rock.png" );}
+#paper{background-image: url("img/paper.png") ;}
+#scissors{background-image: url("img/scissors.png");}
+.winner{font-size: x-large;
+font-weight: bold;}
