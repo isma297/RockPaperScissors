@@ -21,10 +21,13 @@ function computerPlay() {
 //     return player;   
 //     }
 //Play the Game!
-const container2=document.querySelector('#container2');
+const container2=document.querySelector('.container2');
 const handPlayed= document.createElement('p');
 const roundResult=document.createElement('p');
 const result=document.createElement('p');
+const reset=document.createElement('button');
+const playerSelection=document.querySelector('.box-2');
+const cpuSelection=document.querySelector('.box-4')
 const divWin=document.createElement('p');
 divWin.setAttribute('class','winner');
 let round=0;
@@ -39,13 +42,16 @@ let cpuScore=0;
 // btnScissors.addEventListener('click',()=>play('scissors'));
 
 const buttons=document.querySelectorAll('button');
-buttons.forEach((button)=>{button.addEventListener('click',()=>{play(button.id)})
+buttons.forEach((button)=>{button.addEventListener('click',()=>{play(button.id);
+})
 });
-
+reset.addEventListener('click',()=>{resetGame()});
 function play(hand){
   if(round<5){
   round++; 
+  playerSelection.textContent=hand;
   computerPlay();
+  cpuSelection.textContent=cpu;
   if(cpu===hand){
     handPlayed.textContent='Player:   -'+hand.toUpperCase()+'-    vs    -'+cpu.toUpperCase()+'-   :Cpu';
     result.textContent='Round '+round+': Tie, no points :('
@@ -66,11 +72,15 @@ function play(hand){
   }
 if(round==5) {playerScore==cpuScore? winner='It is a TIE':(playerScore>cpuScore?winner='YOU WIN!':winner='CPU WINS!')
 divWin.textContent=winner;
-container2.appendChild(divWin)
+container2.appendChild(divWin);
+reset.textContent='reset';
+container2.appendChild(reset);
 }
-//    
-
 }
 
-
-//play();
+function resetGame(){round=0;
+cpuScore=0;
+playerScore=0;
+winner='';
+// TODO: make disapear the old text;
+}

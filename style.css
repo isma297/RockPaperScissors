@@ -28,16 +28,15 @@ justify-content: space-around;
     justify-content: space-around;
     flex-basis: 20%;
     justify-self: center;
+    margin:auto  auto 0px auto;
 }
 img{
     width: 100%;
 }
 
-#container{text-align: center;
-}
-
 #rock{background-image: url("img/rock.png" );}
 #paper{background-image: url("img/paper.png") ;}
 #scissors{background-image: url("img/scissors.png");}
+
 .winner{font-size: x-large;
 font-weight: bold;}
